@@ -4,7 +4,14 @@
     --c3: rgb(255, 255, 255);
 }
 
+body,
+.top-bar {
+    display: flex;
+    align-items: center;
+}
+
 body {
+    justify-content: center;
     background-color: var(--c3);
     box-sizing: border-box;
     user-select: none;
@@ -13,6 +20,7 @@ body {
 }
 
 .top-bar {
+    justify-content: space-evenly;
     position: absolute;
     top: 0;
     height: 5rem;
@@ -21,18 +29,13 @@ body {
     z-index: 100;
 }
 
-body,
-.top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
 .table,
 .fixtures {
     position: relative;
+    margin: 0 2rem;
     top: 17vh;
-    background-color: var(--c1);
+    background-color: var(--c3);
+    border: 2px solid var(--c1);
     height: 700px;
     border-radius: 15px;
 }
@@ -63,7 +66,7 @@ body,
 
 
 
-@media screen and (max-width: 748px) {
+@media screen and (max-width: 1080px) {
     body {
         flex-direction: column;
     }
@@ -71,7 +74,6 @@ body,
     .table,
     .fixtures {
         margin-bottom: 2rem;
-        max-width: 1%;
-        min-width: 90%;
+        min-width: 65%;
     }
 }
