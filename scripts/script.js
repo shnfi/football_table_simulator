@@ -1,8 +1,11 @@
 const body = document.querySelector("body");
+const table = document.querySelector(".table");
 
 /*
  * showig the 'simulate' button at the startup
  */
+
+// screen creation 
 
 const starting_screen = document.createElement("div");
 starting_screen.className = "starting_screen";
@@ -14,6 +17,7 @@ body.appendChild(starting_screen);
 const simulate_button = document.createElement("button");
 simulate_button.innerHTML = "Simulate!";
 simulate_button.className = "simulate_button";
+
 simulate_button.addEventListener("click", () => {
     starting_screen.style.opacity = "0";
     simulate_button.style.opacity = "0";
@@ -25,3 +29,79 @@ simulate_button.addEventListener("click", () => {
 })
 
 body.appendChild(simulate_button);
+
+/*
+ * inserting clubs to the table
+ */
+
+for (let i = 0; i < 20; i++)
+{
+    /* 
+     * creating the row step by step
+     */
+
+    // row
+
+    const row = document.createElement("div");
+    row.className = "row";
+
+    // col pos
+
+    const col_pos = document.createElement("div");
+    col_pos.className = "col-pos";
+
+    const col_pos_p = document.createElement("p");
+    col_pos_p.innerHTML = i + 1;
+
+    // col pic
+
+    const col_pic = document.createElement("div");
+    col_pic.className = "col-pic";
+
+    const col_pic_img = document.createElement("img");
+    col_pic_img.src = "#"; // fetch the teams badge later
+
+    // col name
+
+    const col_name = document.createElement("div");
+    col_name.className = "col-name";
+
+    const col_name_p = document.createElement("p");
+    col_name_p.innerHTML = "Undefined team"; // fetch the teams name later
+
+    // col info
+
+    const col_info = document.createElement("div");
+    col_info.className = "col-info";
+
+    // col info pl
+
+    const col_info_pl = document.createElement("div");
+    col_info_pl.className = "col-info-pl";
+
+    const col_info_pl_p = document.createElement("p");
+    col_info_pl_p.innerHTML = "38";
+
+    // col info pt
+
+    const col_info_pt = document.createElement("div");
+    col_info_pt.className = "col-info-pt";
+
+    const col_info_pt_p = document.createElement("p");
+    col_info_pt_p.innerHTML = "0";
+
+    // appending step
+
+    col_pos.appendChild(col_pos_p);
+    col_pic.appendChild(col_pic_img);
+    col_name.appendChild(col_name_p);
+    col_info_pl.appendChild(col_info_pl_p);
+    col_info_pt.appendChild(col_info_pt_p);
+    col_info.appendChild(col_info_pl);
+    col_info.appendChild(col_info_pt);
+    row.appendChild(col_pos);
+    row.appendChild(col_pic);
+    row.appendChild(col_name);
+    row.appendChild(col_info);
+    table.appendChild(row);
+}
