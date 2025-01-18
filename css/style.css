@@ -64,6 +64,54 @@ body {
     transition: 0.4s;
 }
 
+.table {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.row {
+    padding: 15px;
+    height: 2rem;
+    display: flex;
+}
+
+.row > * {
+    flex: 1;
+    /* border: 1px solid red; */
+}
+
+.row > *:not(.col-name):not(.col-info) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-pos {
+    flex: 0.1;
+}
+
+.col-pic {
+    flex: 0.1;
+}
+
+.col-name {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.col-info {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.row:nth-child(odd) {
+    background-color: rgb(244, 244, 244);
+}
+
 
 
 @media screen and (max-width: 1080px) {
