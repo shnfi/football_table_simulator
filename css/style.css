@@ -95,6 +95,10 @@ body {
     flex: 0.1;
 }
 
+.col-pic > img {
+    width: 25px;
+}
+
 .col-name {
     padding-left: 1rem;
     display: flex;
