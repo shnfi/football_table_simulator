@@ -59,9 +59,6 @@ for (let i = 0; i < 19; i++)
     }
 }
 
-for (let i = 0; i < 20; i++)
-    console.log(teams[visual_table[i].id].name + " " + visual_table[i].pt);
-
 /*
  * showig the 'simulate' button at the startup
  */
@@ -110,6 +107,22 @@ for (let i = 0; i < 20; i++)
 
     const col_pos = document.createElement("div");
     col_pos.className = "col-pos";
+    
+    const col_pos_color = document.createElement("div");
+    col_pos_color.className = "col-pos-color";
+    
+    if (i == 0 || i == 1 || i == 2 || i == 3)
+        col_pos_color.style.backgroundColor = "blue";
+
+    else if (i == 4)
+        col_pos_color.style.backgroundColor = "orange";
+
+    else if (i == 5)
+        col_pos_color.style.backgroundColor = "green";
+
+    else if (i == 17 || i == 18 || i == 19)
+        col_pos_color.style.backgroundColor = "red";
+
 
     const col_pos_p = document.createElement("p");
     col_pos_p.innerHTML = i + 1;
@@ -152,6 +165,9 @@ for (let i = 0; i < 20; i++)
     col_info_pt_p.innerHTML = visual_table[i].pt;
 
     // appending step
+
+    if (i == 0 || i == 1 || i == 2 || i == 3 || i == 4 || i == 5 || i == 17 || i == 18 || i == 19)
+        col_pos.appendChild(col_pos_color);
 
     col_pos.appendChild(col_pos_p);
     col_pic.appendChild(col_pic_img);
