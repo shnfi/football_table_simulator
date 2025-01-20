@@ -2,6 +2,67 @@ const body = document.querySelector("body");
 const table = document.querySelector(".table");
 
 /*
+ * creating the visul table
+ */
+
+var visual_table = [];
+
+for (let i = 0; i < 20; i++)
+{
+    visual_table[i] = {
+        "id": i,
+        "pt": 0
+    }
+}
+
+/*
+ * randomize the result of all games
+ */
+
+for (let i = 0; i < 20; i++)
+{
+    for (let j = 0; j < 20; j++)
+    {
+        let t1_goals = Math.floor(Math.random() * 7);
+        let t2_goals = Math.floor(Math.random() * 7);
+
+        if (t1_goals > t2_goals)
+        {
+            visual_table[i].pt += 3;
+        }
+        else if (t1_goals == t2_goals)
+        {
+            visual_table[i].pt += 1;
+            visual_table[j].pt += 1;
+        }
+        else if (t1_goals < t2_goals)
+        {
+            visual_table[j].pt += 3;
+        }
+    }
+}
+
+/*
+ * sorting the visual table by the 'pt' value using the 
+ */
+
+for (let i = 0; i < 19; i++)
+{
+    for (let j = 0; j < 19; j++)
+    {
+        if (visual_table[j].pt < visual_table[j + 1].pt)
+        {
+            let tmp = visual_table[j];
+            visual_table[j] = visual_table[j + 1];
+            visual_table[j + 1] = tmp;
+        }
+    }
+}
+
+for (let i = 0; i < 20; i++)
+    console.log(teams[visual_table[i].id].name + " " + visual_table[i].pt);
+
+/*
  * showig the 'simulate' button at the startup
  */
 
@@ -59,7 +120,7 @@ for (let i = 0; i < 20; i++)
     col_pic.className = "col-pic";
 
     const col_pic_img = document.createElement("img");
-    col_pic_img.src = "#"; // fetch the teams badge later
+    col_pic_img.src = teams[visual_table[i].id].badge;
 
     // col name
 
@@ -67,7 +128,7 @@ for (let i = 0; i < 20; i++)
     col_name.className = "col-name";
 
     const col_name_p = document.createElement("p");
-    col_name_p.innerHTML = "Undefined team"; // fetch the teams name later
+    col_name_p.innerHTML = teams[visual_table[i].id].name;
 
     // col info
 
@@ -88,7 +149,7 @@ for (let i = 0; i < 20; i++)
     col_info_pt.className = "col-info-pt";
 
     const col_info_pt_p = document.createElement("p");
-    col_info_pt_p.innerHTML = "0";
+    col_info_pt_p.innerHTML = visual_table[i].pt;
 
     // appending step
 
