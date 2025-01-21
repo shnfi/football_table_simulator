@@ -127,6 +127,10 @@ for (let i = 0; i < 19; i++)
  * showig the 'simulate' button at the startup
  */
 
+// disabling the scroll in the starting screen because of a bug
+
+body.style.overflow = "hidden";
+
 // screen creation 
 
 const starting_screen = document.createElement("div");
@@ -147,6 +151,7 @@ simulate_button.addEventListener("click", () => {
     setTimeout(() => {
         body.removeChild(starting_screen);
         body.removeChild(simulate_button);
+        body.style.overflow = "scroll";
     }, 400);
 })
 
