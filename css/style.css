@@ -137,9 +137,18 @@ body {
     flex: 0.2;
 }
 
+/*
+ * it is a debug line
+ */
+
+/* .row > *,
+.fixture > * {
+    border: 1px solid red;
+} */
 
 
-@media screen and (max-width: 1080px) {
+
+@media screen and (max-width: 1365px) {
     body {
         flex-direction: column;
     }
@@ -148,5 +157,45 @@ body {
     .fixtures {
         margin-bottom: 2rem;
         min-width: 65%;
+    }
+}
+
+
+@media screen and (max-width: 1618px) {
+    .team-name,
+    .result {
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width: 623px) {
+    .table,
+    .fixtures {
+        margin-bottom: 2rem;
+        min-width: 85%;
+    }
+
+    .col-name,
+    .result {
+        font-size: 13px;
+    }
+
+    .col-pic {
+        flex: 0.2;
+    }
+}
+
+
+@media screen and (max-width: 434px) {
+    .result {
+        flex: 0.3;
+    }
+}
+
+
+@media screen and (max-width: 534px) {
+    .team-name {
+        font-size: 12px;
     }
 }
