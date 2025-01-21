@@ -71,10 +71,13 @@ body {
     overflow: scroll;
 }
 
+.row {
+    height: 2rem;
+}
+
 .row,
 .fixture {
     padding: 15px;
-    height: 2rem;
     display: flex;
 }
 
@@ -124,8 +127,7 @@ body {
     justify-content: space-around;
 }
 
-.row:nth-child(odd),
-.fixture:nth-child(odd) {
+.row:nth-child(odd) {
     background-color: rgb(244, 244, 244);
 }
 
@@ -139,6 +141,10 @@ body {
 
 .result {
     flex: 0.2;
+}
+
+.fixture > p {
+    align-self: center;
 }
 
 /*
