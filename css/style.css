@@ -184,6 +184,10 @@ body {
     * {
         font-size: 13px;
     }
+
+    .col-pos-color {
+        height: 4.5rem;
+    }
 }
 
 
