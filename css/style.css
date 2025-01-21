@@ -129,6 +129,10 @@ body {
     background-color: rgb(244, 244, 244);
 }
 
+.team-name {
+    text-align: center;
+}
+
 .team-pic {
     flex: 0.1;
 }
