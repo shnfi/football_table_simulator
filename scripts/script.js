@@ -20,6 +20,19 @@ for (let i = 0; i < 20; i++)
  * randomize the result of all games
  */
 
+const first_fixture = document.createElement("div");
+first_fixture.className = "fixture";
+first_fixture.style.backgroundColor = "rgb(255, 75, 68)";
+first_fixture.style.color = "white";
+first_fixture.style.height = "0";
+
+const first_fixture_at_end = document.createElement("p");
+first_fixture_at_end.className = "fixture-at-end";
+first_fixture_at_end.innerText = teams[0].name;
+
+first_fixture.appendChild(first_fixture_at_end);
+fixtures.appendChild(first_fixture);
+
 for (let i = 0; i < 20; i++)
 {
     for (let j = 0; j < 20; j++)
@@ -44,13 +57,41 @@ for (let i = 0; i < 20; i++)
             }
 
             /* 
-                * creating the row step by step
-                */
+             * creating the row step by step
+             */
 
             // fixture
 
-            const fixture = document.createElement("div");
-            fixture.className = "fixture";
+            var fixture;
+            var fixture_at_end;
+
+            if (j == 19)
+            {
+                fixture = document.createElement("div");
+                fixture.className = "fixture";
+                fixture.style.backgroundColor = "rgb(255, 75, 68)";
+                fixture.style.color = "white";
+                fixture.style.height = "0";
+                
+                fixture_at_end = document.createElement("p");
+                fixture_at_end.className = "fixture-at-end";
+                fixture_at_end.innerText = teams[i + 1].name;
+            }
+            else 
+            {
+                fixture = document.createElement("div");
+                fixture.className = "fixture";
+                fixture.style.height = "2rem";
+
+                if (t1_goals > t2_goals)
+                    fixture.style.backgroundColor = "rgba(50, 222, 133, 0.50";
+
+                else if (t1_goals == t2_goals)
+                    fixture.style.backgroundColor = "rgb(169, 169, 169, 0.50";
+
+                else if (t1_goals < t2_goals)
+                    fixture.style.backgroundColor = "rgb(253, 92, 99, 0.50";
+            }
 
             // team 1 pic
 
@@ -99,11 +140,20 @@ for (let i = 0; i < 20; i++)
             result.appendChild(result_p);
             team2_name.appendChild(team2_name_p);
             team2_pic.appendChild(team2_pic_img);
-            fixture.appendChild(team1_pic);
-            fixture.appendChild(team1_name);
-            fixture.appendChild(result);
-            fixture.appendChild(team2_name);
-            fixture.appendChild(team2_pic);
+            
+            if (j == 19)
+            {
+                fixture.appendChild(fixture_at_end);
+            }
+            else
+            {
+                fixture.appendChild(team1_pic);
+                fixture.appendChild(team1_name);
+                fixture.appendChild(result);
+                fixture.appendChild(team2_name);
+                fixture.appendChild(team2_pic);
+            }
+
             fixtures.appendChild(fixture);
         }
     }
