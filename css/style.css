@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "mainFont";
+    src: url(../fonts/Rajdhani-SemiBold.ttf);
+}
+
 :root {
     --c1: rgb(255, 75, 68);
     --c2: rgb(0, 0, 27);
     --c3: rgb(255, 255, 255);
+}
+
+* { 
+    font-family: "mainFont";
 }
 
 body,
