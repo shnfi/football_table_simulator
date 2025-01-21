@@ -99,8 +99,7 @@ body {
     position: absolute;
     left: 0;
     height: 4rem;
-    width: 5px;
-    border-radius: 0 100px 100px 0;
+    width: 4px;
 }
 
 .col-pic {
