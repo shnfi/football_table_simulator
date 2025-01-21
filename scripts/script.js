@@ -1,5 +1,6 @@
 const body = document.querySelector("body");
 const table = document.querySelector(".table");
+const fixtures = document.querySelector(".fixtures");
 
 /*
  * creating the visul table
@@ -39,6 +40,69 @@ for (let i = 0; i < 20; i++)
         {
             visual_table[j].pt += 3;
         }
+
+        /* 
+         * creating the row step by step
+         */
+
+        // fixture
+
+        const fixture = document.createElement("div");
+        fixture.className = "fixture";
+
+        // team 1 pic
+
+        const team1_pic = document.createElement("div");
+        team1_pic.className = "team-pic";
+
+        const team1_pic_img = document.createElement("img");
+        team1_pic_img.src = teams[visual_table[i].id].badge;
+
+        // team 1 name 
+
+        const team1_name = document.createElement("div");
+        team1_name.className = "team-name";
+
+        const team1_name_p = document.createElement("p");
+        team1_name_p.innerHTML = teams[visual_table[i].id].name;
+
+        // result
+
+        const result = document.createElement("div");
+        result.className = "result";
+
+        const result_p = document.createElement("p");
+        result_p.innerHTML = `${t1_goals} - ${t2_goals}`;
+
+        // team 2 name 
+
+        const team2_name = document.createElement("div");
+        team2_name.className = "team-name";
+
+        const team2_name_p = document.createElement("p");
+        team2_name_p.innerHTML = teams[visual_table[j].id].name;
+
+        // team 2 pic
+
+        const team2_pic = document.createElement("div");
+        team2_pic.className = "team-pic";
+
+        const team2_pic_img = document.createElement("img");
+        team2_pic_img.src = teams[visual_table[j].id].badge;
+
+        // appending step
+
+        team1_pic.appendChild(team1_pic_img);
+        team1_name.appendChild(team1_name_p);
+        result.appendChild(result_p);
+        team2_name.appendChild(team2_name_p);
+        team2_pic.appendChild(team2_pic_img);
+        fixture.appendChild(team1_pic);
+        fixture.appendChild(team1_name);
+        fixture.appendChild(result);
+        fixture.appendChild(team2_name);
+        fixture.appendChild(team2_pic);
+        fixtures.appendChild(fixture);
     }
 }
 
