@@ -38,6 +38,10 @@ body {
     z-index: 100;
 }
 
+.top-bar > a > img {
+    width: 120px;
+}
+
 .table,
 .fixtures {
     position: relative;
@@ -218,5 +222,12 @@ body {
 @media screen and (max-width: 534px) {
     * {
         font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .top-bar > a > img {
+        width: 95px;
     }
 }
