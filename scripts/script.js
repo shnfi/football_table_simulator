@@ -39,8 +39,36 @@ for (let i = 0; i < 20; i++)
     {
         if (teams[i].name != teams[j].name)
         {
+            let possiblelity_array = []; 
+
+            for (let k = 0; k < teams[i].power; k++)
+                possiblelity_array.push(1);
+
+            for (let l = 0; l < teams[j].power; l++)
+                possiblelity_array.push(2);
+
+            const choice = Math.floor(Math.random() * (possiblelity_array.length - 1))
+
+            var condition;
+
             let t1_goals = Math.floor(Math.random() * 7);
             let t2_goals = Math.floor(Math.random() * 7);
+
+            if (possiblelity_array[choice] == 1)
+                condition = t1_goals > t2_goals;
+            else
+                condition = t1_goals < t2_goals;
+
+            while (!condition)
+            {
+                t1_goals = Math.floor(Math.random() * 7);
+                t2_goals = Math.floor(Math.random() * 7);
+
+                if (possiblelity_array[choice] == 1)
+                    condition = t1_goals > t2_goals;
+                else
+                    condition = t1_goals < t2_goals;
+            }
 
             if (t1_goals > t2_goals)
             {
