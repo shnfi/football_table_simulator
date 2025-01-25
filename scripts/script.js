@@ -55,9 +55,9 @@ for (let i = 0; i < 20; i++)
             let t2_goals = Math.floor(Math.random() * 7);
 
             if (possiblelity_array[choice] == 1)
-                condition = t1_goals > t2_goals;
+                condition = t1_goals >= t2_goals;
             else
-                condition = t1_goals < t2_goals;
+                condition = t1_goals <= t2_goals;
 
             while (!condition)
             {
