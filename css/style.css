@@ -81,7 +81,8 @@ body {
 .fixtures {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .row {
@@ -158,6 +159,18 @@ body {
 
 .fixture > p {
     align-self: center;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--c3);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--c1);
 }
 
 /*
