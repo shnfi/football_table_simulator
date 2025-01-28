@@ -6,6 +6,8 @@ const fixtures = document.querySelector(".fixtures");
  * creating the visul table
  */
 
+let teams = laliga_teams; // we will change the 'teams' variable to the user choosed league later 
+
 var visual_table = [];
 
 for (let i = 0; i < 20; i++)
