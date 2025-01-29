@@ -4,9 +4,8 @@
 }
 
 :root {
-    --c1: rgb(255, 75, 68);
-    --c2: rgb(0, 0, 27);
-    --c3: rgb(255, 255, 255);
+    --c1: rgb(61, 25, 91);
+    --c2: rgb(255, 255, 255);
 }
 
 * { 
@@ -21,7 +20,7 @@ body,
 
 body {
     justify-content: center;
-    background-color: var(--c3);
+    background-color: var(--c2);
     box-sizing: border-box;
     user-select: none;
     padding: 0;
@@ -33,13 +32,13 @@ body {
     position: absolute;
     top: 0;
     height: 5rem;
-    background-color: var(--c3);
+    background-color: var(--c2);
     box-shadow: 0 0 30px 5px var(--c1);
     z-index: 100;
 }
 
 .top-bar > a > img {
-    width: 120px;
+    width: 45px;
 }
 
 .table,
@@ -47,7 +46,7 @@ body {
     position: relative;
     margin: 0 2rem;
     top: 17vh;
-    background-color: var(--c3);
+    background-color: var(--c2);
     border: 2px solid var(--c1);
     height: 700px;
     border-radius: 15px;
@@ -71,7 +70,7 @@ body {
     height: 5rem;
     background-color: var(--c2);
     border: none;
-    color: var(--c3);
+    color: #000;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.4s;
@@ -93,6 +92,10 @@ body {
 .fixture {
     padding: 15px;
     display: flex;
+}
+
+.fixture {
+    background-color: var(--c1);
 }
 
 .row > *,
@@ -166,7 +169,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--c3);
+    background-color: var(--c2);
 }
 
 ::-webkit-scrollbar-thumb {
