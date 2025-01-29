@@ -7,6 +7,13 @@
     font-family: "mainFont";
 }
 
+body {
+    background: rgb(255,75,68);
+    background: linear-gradient(90deg, rgba(255,75,68,0.65) 0%, rgba(61,25,91,0.6) 50%, rgba(0,91,255,0.65) 100%);
+    user-select: none;
+    box-sizing: border-box;
+}
+
 .container {
     position: relative;
     top: 20vh;
@@ -17,22 +24,53 @@
 }
 
 .container > p {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 5rem;
+    color: #fff;
 }
 
 .buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    max-width: 55rem;
+    width: 60%;
+    min-width: 30rem;
 }
 
 .league_button {
-    margin: 0 5rem;
+    width: 130px;
+    height: 130px;
+    background-color: rgb(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: 0.2s;
     cursor: pointer;
 }
 
 .league_button:hover {
     transform: scale(1.2);
+}
+
+
+@media screen and (max-width: 580px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .league_button {
+        width: 100px;
+        height: 100px;
+        margin: 1.5rem 0;
+    }
+
+    .league_button > img {
+        width: 60px;
+    }
+
+    .container > p {
+        margin-bottom: 2.6rem;
+    }
 }
