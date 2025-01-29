@@ -75,3 +75,10 @@ body {
         margin-bottom: 2.6rem;
     }
 }
+
+
+@media screen and (max-height: 805px) {
+    .container {
+        top: 10vh;
+    }
+}
