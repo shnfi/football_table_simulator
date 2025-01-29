@@ -245,6 +245,6 @@ body {
 
 @media screen and (max-width: 900px) {
     .top-bar > a > img {
-        width: 95px;
+        width: 35px;
     }
 }
