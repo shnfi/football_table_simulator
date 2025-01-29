@@ -6,7 +6,14 @@ const fixtures = document.querySelector(".fixtures");
  * creating the visul table
  */
 
-let teams = laliga_teams; // we will change the 'teams' variable to the user choosed league later 
+let teams;
+
+if (document.title == "Laliga Table Simulator")
+    teams = laliga_teams;
+else if (document.title == "PL Table Simulator")
+    teams = pl_teams;
+else if (document.title == "Serie A Table Simulator")
+    teams = sa_teams;
 
 var visual_table = [];
 
@@ -24,7 +31,6 @@ for (let i = 0; i < 20; i++)
 
 const first_fixture = document.createElement("div");
 first_fixture.className = "fixture";
-first_fixture.style.backgroundColor = "rgb(255, 75, 68)";
 first_fixture.style.color = "white";
 first_fixture.style.height = "0";
 
@@ -99,7 +105,6 @@ for (let i = 0; i < 20; i++)
             {
                 fixture = document.createElement("div");
                 fixture.className = "fixture";
-                fixture.style.backgroundColor = "rgb(255, 75, 68)";
                 fixture.style.color = "white";
                 fixture.style.height = "0";
                 
