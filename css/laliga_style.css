@@ -29,13 +29,17 @@ body {
 }
 
 .top-bar {
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: absolute;
     top: 0;
     height: 5rem;
     background-color: var(--c3);
     box-shadow: 0 0 30px 5px var(--c1);
     z-index: 100;
+}
+
+.top-bar > * {
+    margin: 0 2rem;
 }
 
 .top-bar > a > img {
@@ -165,6 +169,13 @@ body {
     align-self: center;
 }
 
+.back-button, 
+.refresh-button {
+    color: var(--c1);
+    text-decoration: none;
+    font-size: 20px;
+}
+
 ::-webkit-scrollbar {
     width: 3px;
 }
@@ -239,6 +250,11 @@ body {
 @media screen and (max-width: 534px) {
     * {
         font-size: 12px;
+    }
+
+    .back-button, 
+    .refresh-button {
+        font-size: 18px;
     }
 }
 
