@@ -8,7 +8,10 @@ const fixtures = document.querySelector(".fixtures");
 
 function fix_the_damn_bug(val)
 {
-    return val.replace("https", "https:");
+    if (document.title == "Laliga Table Simulator")
+        return val.replace("https", "https:");
+    else 
+        return val;
 }
 
 let res_file;
@@ -23,6 +26,7 @@ else if (document.title == "Serie A Table Simulator")
 fetch(res_file)
 .then(response => response.json())
 .then(teams => {
+    console.log(teams[0]["badge"]);
     var visual_table = [];
 
     for (let i = 0; i < 20; i++)
