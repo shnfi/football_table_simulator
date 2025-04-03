@@ -1,4 +1,4 @@
-# Soccer table simulator (in web format)
+<h1>Soccer table simulator (in web format)</h1>
 Simulate the a whole laliga season and see what will happen to that 20 club! who is the champion? and who is the worst club?
 
 ## NOTE
